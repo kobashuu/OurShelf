@@ -1,24 +1,10 @@
-# README
+# OurShlef
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## OverView
 
-Things you may want to cover:
+「私の本棚」「あなたの本棚」を、「私たちの本棚」に変えます。
 
-* Ruby version
+## Author
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[@independFrom](https://twitter.com/independFrom)
+[@jpjdjgag](https://twitter.com/jpjdjgag)
