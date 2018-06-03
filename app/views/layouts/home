@@ -91,16 +91,6 @@
     </div>
   </div>
   <div class="clear"></div><!-- floatをクリアするため、空タグは良くない -->
-  <footer>
-    <div id="footer-logo">OurShelf</div>
-    <div id="footer-list">
-      <!--<h4>MENU</h4>-->
-      <ul>
-        <li>OurShelfについて</li>
-        <li>コンセプト</li>
-        <li>お問い合わせ</li>
-      </ul>
-    </div>
-  </footer>
+  
 </body>
 </html>
