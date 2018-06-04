@@ -74,6 +74,13 @@ header {
   height: auto;
   background-size: cover;
   margin-bottom: 40px;
+  .spam1 {
+    color: aqua;
+  }
+  .spam2 {
+    color: lime;
+    font-size: 40px;
+  }
   p {
     :visited {
       color: #fff;
@@ -179,6 +186,11 @@ footer {
       text-decoration: none;
     }
   }
+}
+
+/* about */
+.about_message p {
+  color: black;
 }
 
 /* miscellaneous */
