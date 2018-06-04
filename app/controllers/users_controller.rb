@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # 実装は終わっていないことに注意!
     if @user.save
+      log_in @user
       redirect_to welcome_path
     else
       render 'new'
