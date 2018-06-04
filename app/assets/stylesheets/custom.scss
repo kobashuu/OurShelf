@@ -70,7 +70,7 @@ header {
 
 #concept {
   background-image: url(http://cdn-ak.f.st-hatena.com/images/fotolife/a/akihito_jam1/20141021/20141021025932.jpg);
-  // 他人のサイトの画像、付け焼刃
+  /* 他人のサイトの画像、付け焼刃 */
   height: auto;
   background-size: cover;
   margin-bottom: 40px;
@@ -189,4 +189,16 @@ footer {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
 }

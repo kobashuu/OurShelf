@@ -1,3 +1,27 @@
 <% provide(:title, 'Sign up') %>
-<h1>アカウント作成</h1>
-<p>This will be a signup page for new users.</p>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name, "名前（本名推奨）" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :account_name, "アカウント名（英数/記号）" %>
+      <%= f.text_field :account_name %>
+
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password, "パスワード（6文字以上）" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "パスワード確認" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "アカウント作成", class: "btn" %>
+    <% end %>
+  </div>
+</div>
