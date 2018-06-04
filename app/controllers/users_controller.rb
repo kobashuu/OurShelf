@@ -11,8 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # 実装は終わっていないことに注意!
     if @user.save
-      flash[:success] = "世界で最もユニークな本棚へようこそ！ここでは全ての知識が共有可能です。"
-      redirect_to @user
+      redirect_to welcome_path
     else
       render 'new'
     end
