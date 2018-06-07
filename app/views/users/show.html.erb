@@ -1,4 +1,13 @@
-<% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-</h1>
+<% provide(:title, "設定") %>
+<div>
+  <h1>
+    <%= @user.name %>
+  </h1>
+  <br>
+  <p>
+    <%= @user.self_introduction %>
+  </p>
+</div>
+<div>
+  <%= link_to "プロフィールを編集", edit_user_path(current_user) %>
+</div>

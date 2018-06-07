@@ -1,0 +1,19 @@
+<% provide(:title, '設定とプライバシー') %>
+<h1>設定とプライバシー</h1>
+<h2>パスワードを変更する</h2>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, class: 'form-control' %>
+
+    <%= f.label :password, "新しいパスワード" %>
+    <%= f.password_field :password, class: 'form-control' %>
+
+    <%= f.label :password_confirmation, "新しいパスワードを再入力" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "変更を保存", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
