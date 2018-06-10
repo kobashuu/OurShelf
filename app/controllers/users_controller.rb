@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to welcome_path
+      redirect_back_or welcome_path
     else
       render 'new'
     end
@@ -61,6 +61,7 @@ class UsersController < ApplicationController
 
     def logged_in_user
       unless logged_in?
+        store_location
         flash[:danger] = "ログインしてください"
         redirect_to login_url
       end
@@ -73,6 +74,7 @@ class UsersController < ApplicationController
 
     def logged_in_user2
       unless logged_in?
+        store_location
         flash[:danger] = "ページにアクセスできません"
         redirect_to root_url
       end

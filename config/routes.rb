@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'setting/edit'
+
+  get 'setting/update'
+
   get 'sessions/new'
   root 'static_pages#first'
   get  '/about',    to: 'static_pages#about'
@@ -8,8 +12,6 @@ Rails.application.routes.draw do
   get    '/login',  to: 'sessions#new'
   post   '/login',  to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  resources :users do
-    resources :password_digest, controller: 'users/password_digests', :only => :edit
-  end
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
