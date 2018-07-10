@@ -1,14 +1,22 @@
 <% provide(:title, "設定") %>
-<div>
-  <h1>
-    <%= image_tag @user.picture.url, :size =>'80' if @user.picture? %>
-    <%= @user.name %>
-  </h1>
-  <br>
-  <p>
-    <%= @user.self_introduction %>
-  </p>
-</div>
-<div>
-  <%= link_to "プロフィールを編集", edit_user_path(current_user) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= image_tag @user.picture.url, :size =>'80' if @user.picture? %>
+        <%= @user.name %>
+      </h1>
+      <br>
+      <p><%= @user.self_introduction %></p>
+      <p><%= link_to "プロフィールを編集", edit_user_path(current_user) %></p>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.books.any? %>
+      <h3>所有している本(<%= @user.books.count %>)冊</h3>
+      <ol>
+        <%= render @books %>
+      </ol>
+    <% end %>
+  </div>
 </div>

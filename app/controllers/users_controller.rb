@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(params[:id])
+    @books = @user.books
   end
 
   def new
@@ -56,14 +57,6 @@ class UsersController < ApplicationController
                                    :self_introduction,
                                    :password_confirmation,
                                    :picture)
-    end
-
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
     end
 
     def correct_user
