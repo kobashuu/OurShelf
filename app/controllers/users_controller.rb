@@ -6,8 +6,6 @@ class UsersController < ApplicationController
   def welcome
   end
 
-  def home
-  end
 
   def setting
     @user = User.find(params[:id])
@@ -56,7 +54,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :self_introduction,
-                                   :password_confirmation)
+                                   :password_confirmation,
+                                   :picture)
     end
 
     def logged_in_user

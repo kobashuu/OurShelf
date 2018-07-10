@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'setting/edit'
-
-  get 'setting/update'
 
   get 'sessions/new'
-  root 'static_pages#first'
+  root 'static_pages#home'
   get  '/about',    to: 'static_pages#about'
   get  '/signup',   to: 'users#new'
   get  '/welcome',  to: 'users#welcome'

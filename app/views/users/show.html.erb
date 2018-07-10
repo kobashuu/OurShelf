@@ -1,6 +1,7 @@
 <% provide(:title, "設定") %>
 <div>
   <h1>
+    <%= image_tag @user.picture.url, :size =>'80' if @user.picture? %>
     <%= @user.name %>
   </h1>
   <br>
