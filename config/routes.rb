@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "information" => "books#information"
   get "search" => "books#search"
   get 'sessions/new'
   root 'static_pages#home'

@@ -8,12 +8,11 @@
 }
 
 * {
-  font-family: sans-serif;
+  font-family: "ヒラギノ角ゴシック W0";
   box-sizing: border-box;
   margin:0px;
   padding:0px;
 }
-
 
 .clear {
   clear: left;
@@ -23,19 +22,38 @@ ul {
   list-style: none;
 }
 
+/* header */
+
 header {
   margin-bottom: 30px;
+
+  h1 {
+    float: left;
+    padding: 20px, 40px;
+  }
+
+  li {
+    float: left;
+    padding-top: 30px;
+    padding-left: 20px;
+    color: white ;
+  }
+
+  .header-form {
+    color: black;
+  }
+
 }
 
 #header-wrapper {
-  height: 60px;
+  height: 80px;
   width:100%;
   background-color: #1E1D47;
 }
 
 #header-logo {
   float:left;
-  padding:10px 40px;
+  padding:20px 40px;
   font-size: 30px;
   color:white;
   text-decoration:none;
@@ -94,7 +112,6 @@ header {
       text-decoration: none;
     }
   }
-
 }
 
 #concept .content {
@@ -156,11 +173,12 @@ header {
   background-color: rgba(31, 30, 71, 0.5)
 }
 
+/* footer */
+
 footer {
   height: auto;
   background-color: #1E1D47;
   color: white;
-  margin-top: 30px;
 }
 
 #footer-logo {
@@ -196,6 +214,24 @@ p {
   color: black;
 }
 
+
+/* modal */
+.modal.in {
+  transition-duration: 0.1s;
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  margin: auto;
+  pointer-events: none;
+}
+
+.modal-content {
+  pointer-events: all;
+}
 
 /* miscellaneous */
 

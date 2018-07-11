@@ -2,6 +2,10 @@ class BooksController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
+  def information
+    @book = Book.find(params[:id])
+  end
+
   def search
     if params[:title] #書籍名で検索
       @items = RakutenWebService::Books::Book.search(title: params[:title])
@@ -15,7 +19,7 @@ class BooksController < ApplicationController
     @book = current_user.books.build(book_params)
       if @book.save
         flash[:success] = "本棚に追加しました！"
-        redirect_to current_user
+        redirect_to request.referrer || current_user
       else
         render 'search'
       end

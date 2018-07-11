@@ -6,13 +6,16 @@ class UsersController < ApplicationController
   def welcome
   end
 
+  def index
+    @users = User.all
+  end
 
   def setting
     @user = User.find(params[:id])
   end
 
   def show
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
     @books = @user.books
   end
 

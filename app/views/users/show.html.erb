@@ -1,4 +1,4 @@
-<% provide(:title, "設定") %>
+<% provide(:title, "#{@user.name}") %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -13,9 +13,9 @@
   </aside>
   <div class="col-md-8">
     <% if @user.books.any? %>
-      <h3>所有している本(<%= @user.books.count %>)冊</h3>
+      <h3>所有している本 <%= @user.books.count %>冊</h3>
       <ol>
-        <%= render @books %>
+        <%= render 'shared/shelf' %>
       </ol>
     <% end %>
   </div>
