@@ -1,35 +1,41 @@
-<table class="shelf">
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td>
-          <a data-toggle="modal" data-target="#myModal">
+<div id="shelf">
+  <table class="shelf">
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td>
+            <a href="#" data-toggle="modal" data-target="#myModal-<%= book.id %>">
             <%= image_tag book.picture, :height => "200", :alt => book.title %>
-          </a>
-          <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title"><%= book.title %></h4>
-                  <h5><%= link_to "#{book.author}", search_url(author: book.author) %></h3>
-                </div>
-                <div class="modal-body">
+            <div class="modal fade" id="myModal-<%= book.id %>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><%= book.title %></h4>
+                    <h5><%= link_to "#{book.author}", search_url(author: book.author) %></h3>
+                  </div>
                   <% if current_user?(book.user) %>
-                    <%= check_box_tag :reading %>
-                    <%= label_tag :reading, "読んでいる" %>
+                    <div class="modal-body">
+                      <%= link_to "読む", book.user, class: "btn btn-info" %>
+                      <p><a href="" >５人</a>が所有しています</p>
+                      <p>読みたい人が<a href="">３人</a>います</p>
+                      <p>レビュー</p>
+                      <p>メモ</p>
+                    </div>
+                    <div class="modal-footer">
+                      <%= link_to "本棚から消去", book, method: :delete, data: { confirm: "本当に消去しますか？" } %>
+                    </div>
                   <% else %>
-                    <li><%= link_to "#{@user.name}に貸出リクエストを送る", "#" %></li>
+                    <div class="modal-body">
+                      <li><%= link_to "#{@user.name}に貸出リクエストを送る", "#", class: "btn btn-info" %></li>
+                    </div>
                   <% end %>
-                </div>
-                <div class="modal-footer">
-                  <%= link_to "本棚から消去", book, method: :delete, data: { confirm: "本当に消去しますか？" } %>
                 </div>
               </div>
             </div>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

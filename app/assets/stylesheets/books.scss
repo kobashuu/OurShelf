@@ -2,7 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#shelf {
+    background-image: url("../images/images.jpeg");
+    background-color: #fce2c4;
+
+}
+
 .shelf {
+
   tbody {
     padding: 50px;
   }

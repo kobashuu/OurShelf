@@ -1,11 +1,5 @@
 <% provide(:title, 'home') %>
 <% if logged_in? %>
-<div id="concept">
-    <div class="content">
-      <h2>OurShlef</h2>
-      <h1>「わたしの本棚」「あなたの本棚」が「わたしたちの本棚」にアップデートします。</h1>
-    </div>
-</div>
 <div id="main">
   <div id="main-ranking" class="box">
     <h2>ランキング</h2>
@@ -72,8 +66,8 @@
 <% else %>
 <div id="concept">
     <div class="content">
-      <h2>OurShlef</h2>
-      <h1><spam class="spam1">わたしの本棚 / あなたの本棚</spam> が <spam class="spam2">わたしたちの本棚</spam> にアップデートします。</h1>
+      <h1>OurShlef</h1>
+      <h2>「わたしの本棚」「あなたの本棚」 が <br>「わたしたちの本棚」 に アップデートします。</h2>
       <p><%= link_to "無料会員登録", signup_path, class: "btn" %></p>
     </div>
 </div>

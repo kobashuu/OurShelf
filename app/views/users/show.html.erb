@@ -3,12 +3,14 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= image_tag @user.picture.url, :size =>'80' if @user.picture? %>
+        <%= image_tag @user.picture.url, :size =>'80', :class => "picture" if @user.picture? %>
         <%= @user.name %>
       </h1>
       <br>
       <p><%= @user.self_introduction %></p>
+      <% if current_user?(@user) %>
       <p><%= link_to "プロフィールを編集", edit_user_path(current_user) %></p>
+      <% end %>
     </section>
   </aside>
   <div class="col-md-8">
