@@ -6,6 +6,23 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def read
+    user = User.find(params[:id])
+    reader = User.find(params[:reader_id])
+    book = user.books.find(params[:book_id])
+    if book.reader_id == nil
+      book.reader_id = reader.id
+      book.save
+      flash[:success] = "楽しんで！"
+      redirect_to user
+    else
+      book.reader_id = nil
+      book.save
+      flash[:success] = "お疲れ様です！"
+      redirect_to user
+    end
+  end
+
   def search
     if params[:title] #書籍名で検索
       @items = RakutenWebService::Books::Book.search(title: params[:title])
@@ -35,7 +52,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :user_id, :picture)
+      params.require(:book).permit(:title, :author, :user_id, :picture, :reader_id)
     end
 
     def correct_user

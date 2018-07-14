@@ -215,9 +215,6 @@ p {
 }
 
 /* modal */
-.modal.in {
-  transition-duration: 0.1s;
-}
 
 .modal-dialog {
   display: flex;
@@ -225,12 +222,8 @@ p {
   justify-content: center;
   min-height: 100%;
   margin: auto;
-  pointer-events: none;
 }
 
-.modal-content {
-  pointer-events: all;
-}
 
 /* miscellaneous */
 
