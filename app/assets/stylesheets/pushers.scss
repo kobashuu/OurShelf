@@ -1,0 +1,57 @@
+// Place all the styles related to the pushers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$c_light_gray: #F7F7F7;
+$c_blue: #114aa9;
+$c_gray: #666666;
+
+.notify-wrap {
+    z-index: 10;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    .notify {
+        position: relative;
+        right: -300px;
+        width: 200px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        border: 3px solid $c_light_gray;
+        background-color: #fff;
+        box-shadow: 0 4px 10px #ddd;
+        margin-bottom: 10px;
+        &:hover {
+            border-color: lighten($c_blue, 42);
+        }
+        a {
+            height: 100%;
+            width: 100%;
+            display: block;
+            padding: 10px 15px;
+            &:hover {
+                text-decoration: none;
+                //color: #fff;
+            }
+        }
+        .got-it {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            font-size: 20px;
+            width: 24px;
+            height: 24px;
+            line-height: 20px;
+            border: 2px solid #fff;
+            background-color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+                color: #fff;
+                border: 2px solid $c_gray;
+                background-color: $c_gray;
+            }
+        }
+    }
+}

@@ -29,7 +29,7 @@
                       <% if book.reader_id? %>
                         <% book_reader = User.find(book.reader_id) %>
                         <% if current_user?(book_reader) %>
-                          <%= link_to "読書中", read_path(id: @user.id, book_id: book.id), class: "btn btn-info", method: :patch %>
+                          <%= link_to "読書中", read_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
                         <% else %>
                           <%= "#{book_reader.name} が読書中です" %>
                         <% end %>
@@ -51,8 +51,11 @@
                             read_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
                       <% else %>
                         <% book_reader = User.find(book.reader_id) %>
-                        <%= "#{book_reader.name} が読書中です" %>
+                        <% if book_reader == current_user %>
                         <%= link_to "返す", read_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
+                        <% else %>
+                        <%= "#{book_reader.name} が読書中です" %>
+                        <% end %>
                       <% end %>
                     </div>
                   <% end %>
