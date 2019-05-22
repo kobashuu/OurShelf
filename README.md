@@ -6,6 +6,6 @@
 
 ## Author
 
-[@independFrom](https://twitter.com/independFrom)
+[@independFrom](https://twitter.com/ShiDareTree)
 [@jpjdjgag](https://twitter.com/jpjdjgag)
 # rails-app
