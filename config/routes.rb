@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'notifications/:id/link_through',
+      to: 'notifications#link_through', as: :link_through
+  patch "/request",    to: "books#request"
+  get 'notifications', to: 'notifications#index'
   get "information",to: "books#information"
   get "search",     to: "books#search"
   patch "/read",     to: "books#read"

@@ -48,11 +48,11 @@
                     <div class="modal-body">
                       <% if book.reader_id == nil %>
                         <%= link_to "#{@user.name}に貸出リクエストを送る",
-                            read_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
+                            request_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
                       <% else %>
                         <% book_reader = User.find(book.reader_id) %>
                         <% if book_reader == current_user %>
-                        <%= link_to "返す", read_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
+                        <%= link_to "返却", request_path(id: @user.id, book_id: book.id, reader_id: current_user.id), class: "btn btn-info", method: :patch %>
                         <% else %>
                         <%= "#{book_reader.name} が読書中です" %>
                         <% end %>

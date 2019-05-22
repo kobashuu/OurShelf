@@ -1,0 +1,4 @@
+<li>
+ <% book = user.books.find(notification.book_id) %>
+ <%= link_to "#{notification.notified_by.username}さんが#{book}を読みたいと言っています", link_through_path(notification) %>
+</li>

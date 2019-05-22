@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  notified_by: one
+  book_id: one
+  notified_type: MyString
+  read: false
+
+two:
+  user: two
+  notified_by: two
+  book_id: two
+  notified_type: MyString
+  read: false

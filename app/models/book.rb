@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
+  has_many :notifications, dependent: :destroy
   validates :user_id, presence: true
   validates :title, presence: true
   validates :author, presence: true

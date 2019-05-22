@@ -1,10 +1,27 @@
 class BooksController < ApplicationController
+  after_action :create_notifications, only: [:request]
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
   def information
     @book = Book.find(params[:id])
   end
+
+  def request
+    user = User.find(params[:id])
+    reader = User.find(params[:reader_id])
+    book = user.books.find(params[:book_id])
+    if book.reader_id == nil
+      flash[:success] = "#{user.name}に貸出リクエストを送りました"
+      redirect_to user
+    else
+      book.reader_id = nil
+      book.save
+      flash[:success] = "返却しました"
+      redirect_to user
+    end
+  end
+
 
   def read
     user = User.find(params[:id])
@@ -59,4 +76,11 @@ class BooksController < ApplicationController
       @book = current_user.books.find_by(id: params[:id])
       redirect_to current_user if @book.nil?
     end
+
+    def create_notifications
+      Notification.create(user_id: user.id,
+        notified_by_id: current_user.id,
+        book_id: book.id,)
+   end
+
 end
